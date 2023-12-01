@@ -3,6 +3,11 @@ package com.moodanalyzer;
 public class MoodAnalyser {
     private String message;
 
+    public enum MoodError {
+        EMPTY, NULL, INVALID
+    }
+
+
     public MoodAnalyser(String message){
         this.message = message;
     }
@@ -21,23 +26,23 @@ public class MoodAnalyser {
         this.message = message;
     }
 
-    public String moodAnalysis(){
-        try{
-            if (message == null){
-                return "Happy";
-            }
-            if(message.toLowerCase().contains("happy")){
+    public String moodAnalysis() throws MoodAnalysisException {
+        try {
+            if (message == null) {
+                throw new MoodAnalysisException("Mood message is NULL", MoodError.NULL);
+            } else if (message.trim().isEmpty()) {
+                throw new MoodAnalysisException("Mood message is empty", MoodError.EMPTY);
+            } else if (message.toLowerCase().contains("happy")) {
                 return "HAPPY";
-            }else if(message.toLowerCase().contains("sad")){
+            } else if (message.toLowerCase().contains("sad")) {
                 return "SAD";
-            }else{
-                throw new CustomException("Cannot analyse ");
+            } else {
+                throw new MoodAnalysisException("Cannot analyze", MoodError.INVALID);
             }
-
-        }catch(CustomException e){
+        } catch (MoodAnalysisException e) {
             return e.getMessage();
-
         }
     }
-   
 }
+   
+
