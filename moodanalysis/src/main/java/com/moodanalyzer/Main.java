@@ -40,5 +40,11 @@ public class Main {
         String result5 = moodAnalyser4.moodAnalysis();
         System.out.println("Repeating TC 1.2 Result: " + result5);
 
+         // UC 2 - Test Case
+         String nullMessage = null;
+         MoodAnalyser nullMoodAnalyser = new MoodAnalyser(nullMessage);
+         String nullResult = nullMoodAnalyser.moodAnalysis();
+         System.out.println("UC 2 Test Case Result: " + nullResult);
+     }
+
     }
-}
