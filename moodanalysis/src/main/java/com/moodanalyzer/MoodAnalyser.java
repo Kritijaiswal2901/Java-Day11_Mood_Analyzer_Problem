@@ -3,6 +3,11 @@ package com.moodanalyzer;
 public class MoodAnalyser {
     private String message;
 
+        public enum Mood{
+        HAPPY,
+        SAD
+    }
+
     public MoodAnalyser(String message){
         this.message = message;
     }
@@ -22,19 +27,19 @@ public class MoodAnalyser {
     }
 
     public String moodAnalysis(){
-        try{
-            if (message == null){
+try{
+            if (message == null) {
                 return "Happy";
-            }
-            if(message.toLowerCase().contains("happy")){
+            } 
+            else if(message.toLowerCase().contains("happy")){
                 return "HAPPY";
             }else if(message.toLowerCase().contains("sad")){
                 return "SAD";
             }else{
-                throw new CustomException("Cannot analyse ");
+                throw new MoodAnalysisException(MoodAnalysisError.INVALID);
             }
 
-        }catch(CustomException e){
+        }catch(MoodAnalysisException e){
             return e.getMessage();
 
         }
