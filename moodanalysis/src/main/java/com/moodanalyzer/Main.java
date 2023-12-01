@@ -23,5 +23,22 @@ public class Main {
         String parameterizedResult = parameterizedMoodAnalyser.moodAnalysis();
         System.out.println("Parameterized Constructor Result: " + parameterizedResult);
 
+        // Repeating TC 1.1
+        String message3 = "I am in Any Mood";
+        MoodAnalyser moodAnalyser2 = new MoodAnalyser(message3);
+        String result3 = moodAnalyser2.moodAnalysis();
+        System.out.println("Repeating TC 1.1 Result: " + result3);
+
+        // Repeating TC 1.2
+        String message4 = "I am in Happy Mood";
+        MoodAnalyser moodAnalyser3 = new MoodAnalyser(message4);
+        String result4 = moodAnalyser3.moodAnalysis();
+        System.out.println("Repeating TC 1.2 Result: " + result4);
+
+        String message5 = "I am in Sad Mood";
+        MoodAnalyser moodAnalyser4 = new MoodAnalyser(message5);
+        String result5 = moodAnalyser4.moodAnalysis();
+        System.out.println("Repeating TC 1.2 Result: " + result5);
+
     }
 }
