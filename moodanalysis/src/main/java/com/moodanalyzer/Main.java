@@ -12,5 +12,16 @@ public class Main {
         String result1 = moodAnalyser1.moodAnalysis();
         System.out.println(result1);
 
+        // Creating MoodAnalyser object using default constructor
+        MoodAnalyser defaultMoodAnalyser = new MoodAnalyser();
+        String defaultResult = defaultMoodAnalyser.moodAnalysis();
+        System.out.println("Default Constructor Result: " + defaultResult);
+
+        // Creating MoodAnalyser object using parameterized constructor
+        String message2 = "I am feeling sad!";
+        MoodAnalyser parameterizedMoodAnalyser = new MoodAnalyser(message2);
+        String parameterizedResult = parameterizedMoodAnalyser.moodAnalysis();
+        System.out.println("Parameterized Constructor Result: " + parameterizedResult);
+
     }
 }

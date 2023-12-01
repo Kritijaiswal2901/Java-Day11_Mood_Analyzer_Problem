@@ -7,6 +7,20 @@ public class MoodAnalyser {
         this.message = message;
     }
 
+    //Parameterised and Default constructor
+
+      public MoodAnalyser() {
+        this.message = "";
+    }
+   
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
     public String moodAnalysis(){
         try{
             if(message.toLowerCase().contains("happy")){
