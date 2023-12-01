@@ -45,6 +45,8 @@ public class Main {
          MoodAnalyser nullMoodAnalyser = new MoodAnalyser(nullMessage);
          String nullResult = nullMoodAnalyser.moodAnalysis();
          System.out.println("UC 2 Test Case Result: " + nullResult);
+
+         
      }
 
     }
